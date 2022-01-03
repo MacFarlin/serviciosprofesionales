@@ -1,0 +1,19 @@
+var jcp = new Universidad(provincia="Bs As", honorariosRecomendados= 5550)
+var ch = new Universidad(provincia="Chaco", honorariosRecomendados= 6050)
+var lp = new Universidad(provincia="Bs As", honorariosRecomendados= 7000)
+var sj = new Universidad(provincia="San Juan", honorariosRecomendados= 3500)
+var er = new Universidad(provincia="Entre Rios", honorariosRecomendados= 3780)
+
+var pv1 = new Vinculados(universidad=ch)
+var pv2 = new Vinculados(universidad=jcp)
+var pl1 = new Litoral(universidad=er)
+var pl2 = new Litoral(universidad=jcp)
+var p1 = new Libre(universidad=sj, honorarios= 2500, provincias =["Bs As"])
+var p2 = new Libre(universidad=lp, honorarios= 2480, provincias=["Bs As","Cordoba", "Sta Fe"])
+var p3 = new Libre(universidad=ch, honorarios= 3200, provincias=["Bs As","Chaco", "San Juan"])
+
+var emp1 = new Empresa(profesionales=[pv2,pl2,pv1,p3, p1  ], honorarioReferencia=4600)
+
+emp1.profesionalesMasCaros().forEach({p=> console.println(p.honorario())})
+
+
